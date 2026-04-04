@@ -6,7 +6,7 @@
 /*   By: kalhanaw <kalhanaw@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 19:26:54 by kalhanaw          #+#    #+#             */
-/*   Updated: 2026/04/04 19:12:13 by kalhanaw         ###   ########.fr       */
+/*   Updated: 2026/04/04 19:27:15 by kalhanaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class	Zombie
 {
 	public:
-		Zombie():_name("default"), _id(_nextId){this->_nextId ++;};
+		Zombie();
 		Zombie(std::string name);
 		~Zombie();
 
