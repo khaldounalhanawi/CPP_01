@@ -6,7 +6,7 @@
 /*   By: kalhanaw <kalhanaw@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 19:26:54 by kalhanaw          #+#    #+#             */
-/*   Updated: 2026/04/04 13:18:02 by kalhanaw         ###   ########.fr       */
+/*   Updated: 2026/04/04 19:12:13 by kalhanaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,18 @@
 class	Zombie
 {
 	public:
-		Zombie():_name("default"){};
+		Zombie():_name("default"), _id(_nextId){this->_nextId ++;};
 		Zombie(std::string name);
 		~Zombie();
 
-		void	announce( void );
+		void	announce(void);
 		void	setName(std::string);
+		int		getId(void);
 
 	private:
-		std::string _name;
+		std::string	_name;
+		int			_id;
+		static int	_nextId;
 };
 
 Zombie* zombieHorde( int N, std::string name );
