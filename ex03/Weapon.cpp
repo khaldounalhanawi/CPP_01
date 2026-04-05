@@ -6,7 +6,7 @@
 /*   By: kalhanaw <kalhanaw@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/05 11:10:59 by kalhanaw          #+#    #+#             */
-/*   Updated: 2026/04/05 11:14:28 by kalhanaw         ###   ########.fr       */
+/*   Updated: 2026/04/05 11:17:58 by kalhanaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Weapon::~Weapon(void)
 	return;
 }
 
-const std::string&	Weapon::getType(void)
+const std::string&	Weapon::getType(void) const
 {
 	const std::string &ref = this->_type;
 	return (ref);
