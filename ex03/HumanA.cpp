@@ -1,46 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kalhanaw <kalhanaw@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/05 11:10:59 by kalhanaw          #+#    #+#             */
-/*   Updated: 2026/04/05 12:35:25 by kalhanaw         ###   ########.fr       */
+/*   Created: 2026/04/05 16:16:24 by kalhanaw          #+#    #+#             */
+/*   Updated: 2026/04/05 16:16:26 by kalhanaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "HumanA.hpp"
 #include <iostream>
 
-Weapon::Weapon(void):
-_type("undefined")
+HumanA::HumanA(std::string name, Weapon &weapon):
+_name(name),
+_weapon(weapon)
 {
-	return;
-}
-
-Weapon::Weapon(std::string type):
-_type(type)
-{
-	return;
-}
-
-Weapon::~Weapon(void)
-{
-	std::cout<< "Weapon "	<< this->_type
-			 << " is destroyed."
-			 << std::endl;
-	return;
-}
-
-const std::string&	Weapon::getType(void) const
-{
-	const std::string &ref = this->_type;
-	return (ref);
-}
-
-void	Weapon::setType(std::string type)
-{
-	this->_type = type;
 	return ;
+}
+
+HumanA::~HumanA(void)
+{
+	return ;
+}
+
+void	HumanA::setWeapon(Weapon &newWeapon)
+{
+	this->_weapon = newWeapon;
+	return ;
+}
+
+void	HumanA::attack(void)
+{
+	std::cout<< this->_name
+			 << " attacks with their "
+			 << this->_weapon.getType()
+			 << std::endl;
 }
