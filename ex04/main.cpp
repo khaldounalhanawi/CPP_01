@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalhanaw <kalhanaw@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/06 19:00:43 by kalhanaw          #+#    #+#             */
+/*   Updated: 2026/04/06 19:00:44 by kalhanaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <fstream>
 
@@ -7,18 +19,22 @@ int	print_return(std::string message, int errorNr)
 	return (errorNr);
 }
 
-void	replace(std::string &str, std::string s1, std::string s2)
+void	replace(std::string &str,
+			const std::string &s1, const std::string &s2)
 {
-	size_t	pos;
-	int		len_s1;
+	size_t			pos;
+	const size_t	len_s1 = s1.size ();
+	const size_t	len_s2 = s2.size ();
 
-	len_s1 = s1.size();
-	pos = str.rfind(s1);
-	while (pos != std::string::npos)
+	if (s1.empty() || s1 == s2)
+		return ;
+
+	pos = 0;
+	while ((pos = str.find(s1, pos)) != std::string::npos)
 	{
 		str.erase (pos, len_s1);
 		str.insert (pos, s2);
-		pos = str.rfind(s1);
+		pos += len_s2;
 	}
 	return ;
 }
