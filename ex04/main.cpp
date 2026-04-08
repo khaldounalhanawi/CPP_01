@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
 int	print_return(std::string message, int errorNr)
 {
@@ -52,10 +53,10 @@ int	main(int argc, char **argv)
 
 	fileName = argv[1];
 
-	inFile.open (fileName);
+	inFile.open (fileName.c_str());
 	if (!inFile)
 		return (print_return ("Can't open file.", 1));
-	outFile.open (fileName + ".replace");
+	outFile.open ((fileName + ".replace").c_str());
 
 	if (!outFile)
 		return (print_return ("Couldn't create new file.", 1));
